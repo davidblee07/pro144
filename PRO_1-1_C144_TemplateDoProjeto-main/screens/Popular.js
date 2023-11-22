@@ -44,17 +44,11 @@ export default class PopularScreen extends Component {
 
   renderItem = ({ item, index }) => {
     return (
-      <View style={styles.cardContainer}>
-        <Image source={{ uri: item.poster_link }} style={styles.posterImage} />
-        <View style={styles.movieTitleContainer}>
-          <Text style={styles.title}>{item.original_title}</Text>
-          <View style={{ flexDirection: "row" }}>
-            <Text style={styles.subtitle}> {item.duration} min | </Text>
-            <Star score={rating} style={styles.starStyle} />
-          </View>
+        <View style={styles.cardContainer}>
+          <Text style={styles.title}>Nome do artigo: {"\n\n"+item.title}</Text>
+          <Star score={item.total_events} style={styles.starStyle} />
         </View>
-      </View>
-    );
+      );
   };
 
   render() {
